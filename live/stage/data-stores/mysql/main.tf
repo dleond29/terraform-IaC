@@ -2,16 +2,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_db_instance" "projectInstance" {
-  identifier_prefix   = "terraform-project"
-  engine              = "mysql"
-  allocated_storage   = 10
-  instance_class      = "db.t2.micro"
-  name                = "projectInstance_database"
-  username            = var.db_username
-  password            = var.db_password
-  
-  skip_final_snapshot = true
+module "mysql" {
+  source = "../../../../modules/data-stores/mysql"
+
+  db_name     = var.db_name
+  db_username = var.db_username
+  db_password = var.db_password
 }
 
 terraform {

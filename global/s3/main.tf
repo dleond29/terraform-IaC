@@ -61,4 +61,4 @@ terraform {
 
 # Vaya al código de Terraform, elimine la backendconfiguración y vuelva terraform inita ejecutar para copiar el estado de Terraform en su disco local.
 
-# Ejecutar terraform destroypara eliminar el bucket de S3 y la tabla de DynamoDB.
+# Ejecutar terraform destroy para eliminar el bucket de S3 y la tabla de DynamoDB.
